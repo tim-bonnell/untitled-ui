@@ -1,18 +1,16 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const NotificationMessage = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const NotificationMessage = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="M20.1213 3.8787c1.1716 1.1716 1.1716 3.071 0 4.2426-1.1716 1.1716-3.071 1.1716-4.2426 0-1.1716-1.1715-1.1716-3.071 0-4.2426 1.1716-1.1716 3.071-1.1716 4.2426 0Z"
-    />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -22,4 +20,6 @@ const NotificationMessage = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default NotificationMessage;
+const ForwardRef = forwardRef(NotificationMessage);
+const Memo = memo(ForwardRef);
+export default Memo;

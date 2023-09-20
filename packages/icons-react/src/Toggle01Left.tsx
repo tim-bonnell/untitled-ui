@@ -1,23 +1,16 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const Toggle01Left = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const Toggle01Left = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="M3 11.5C3 9.0147 5.0147 7 7.5 7h9c2.4853 0 4.5 2.0147 4.5 4.5S18.9853 16 16.5 16h-9C5.0147 16 3 13.9853 3 11.5Z"
-    />
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="M7.5 16c2.4853 0 4.5-2.0147 4.5-4.5S9.9853 7 7.5 7 3 9.0147 3 11.5 5.0147 16 7.5 16Z"
-    />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -27,4 +20,6 @@ const Toggle01Left = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default Toggle01Left;
+const ForwardRef = forwardRef(Toggle01Left);
+const Memo = memo(ForwardRef);
+export default Memo;

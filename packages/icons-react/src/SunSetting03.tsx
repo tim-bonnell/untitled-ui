@@ -1,18 +1,16 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const SunSetting03 = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const SunSetting03 = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="M6.654 19.1213c1.089.4949 2.475.4949 3.5641 0 1.089-.495 2.475-.495 3.564 0 1.089.4949 2.475.4949 3.564 0M3.09 15.9712c1.089-.495 2.475-.495 3.564 0 1.089.4951 2.475.4951 3.5641 0 1.089-.495 2.475-.495 3.564 0 1.089.4951 2.475.4951 3.564 0 1.089-.495 2.475-.495 3.564 0"
-    />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -22,4 +20,6 @@ const SunSetting03 = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default SunSetting03;
+const ForwardRef = forwardRef(SunSetting03);
+const Memo = memo(ForwardRef);
+export default Memo;

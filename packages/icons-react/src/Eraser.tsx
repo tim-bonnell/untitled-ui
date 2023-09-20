@@ -1,18 +1,13 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const Eraser = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const Eraser = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="M4.3937 19.3941c-1.188-1.188-1.7821-1.782-2.0047-2.467a3 3 0 0 1 0-1.8541c.2226-.685.8166-1.279 2.0047-2.4671l8.2117-8.2118c1.1881-1.188 1.7821-1.782 2.4671-2.0046a3 3 0 0 1 1.8541 0c.685.2226 1.279.8166 2.4671 2.0046l.2117.2118c1.1881 1.188 1.7821 1.7821 2.0047 2.467a3.0011 3.0011 0 0 1 0 1.8542c-.2226.685-.8166 1.279-2.0047 2.467l-8.6686 8.6687c-.3459.3459-.5189.5188-.7207.6425a1.9985 1.9985 0 0 1-.578.2395C9.4077 21 9.1631 21 8.674 21H7.325c-.4893 0-.7338 0-.964-.0552a1.999 1.999 0 0 1-.5781-.2395c-.2019-.1237-.3748-.2966-.7207-.6425l-.6686-.6687Z"
-    />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -22,4 +17,6 @@ const Eraser = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default Eraser;
+const ForwardRef = forwardRef(Eraser);
+const Memo = memo(ForwardRef);
+export default Memo;

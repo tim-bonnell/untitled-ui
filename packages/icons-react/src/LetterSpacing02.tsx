@@ -1,18 +1,16 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const LetterSpacing02 = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const LetterSpacing02 = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="m18.3 13.8 2.7 2.7-2.7 2.7M5.7 13.8 3 16.5l2.7 2.7"
-    />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -22,4 +20,6 @@ const LetterSpacing02 = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default LetterSpacing02;
+const ForwardRef = forwardRef(LetterSpacing02);
+const Memo = memo(ForwardRef);
+export default Memo;

@@ -1,18 +1,13 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const Laptop02 = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const Laptop02 = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="M3 16c0-.279 0-.4185.0307-.5329a.9.9 0 0 1 .6364-.6364C3.7815 14.8 3.921 14.8 4.2 14.8h15.6c.279 0 .4185 0 .5329.0307a.8999.8999 0 0 1 .6364.6364C21 15.5815 21 15.721 21 16c0 .558 0 .837-.0613 1.0659a1.8004 1.8004 0 0 1-1.2728 1.2728C19.437 18.4 19.158 18.4 18.6 18.4H5.4c-.558 0-.837 0-1.0659-.0613a1.8002 1.8002 0 0 1-1.2728-1.2728C3 16.837 3 16.558 3 16Z"
-    />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -22,4 +17,6 @@ const Laptop02 = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default Laptop02;
+const ForwardRef = forwardRef(Laptop02);
+const Memo = memo(ForwardRef);
+export default Memo;

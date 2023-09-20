@@ -1,14 +1,13 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const Check = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const Check = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path fill="#fff" fillOpacity={0.01} d="M20 6 9 17l-5-5" />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -18,4 +17,6 @@ const Check = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default Check;
+const ForwardRef = forwardRef(Check);
+const Memo = memo(ForwardRef);
+export default Memo;

@@ -1,18 +1,13 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const Compass = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const Compass = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="M11.1 9.3c1.2426 0 2.25-1.0074 2.25-2.25S12.3426 4.8 11.1 4.8 8.85 5.8074 8.85 7.05 9.8574 9.3 11.1 9.3Z"
-    />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -22,4 +17,6 @@ const Compass = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default Compass;
+const ForwardRef = forwardRef(Compass);
+const Memo = memo(ForwardRef);
+export default Memo;

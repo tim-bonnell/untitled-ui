@@ -1,18 +1,16 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const Umbrella02 = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const Umbrella02 = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="M12 2c-4.9706 0-9 4.0294-9 9 0 0 1.2508-.9 2.7-.9 1.4492 0 2.7.9 2.7.9s2.1508-.9 3.6-.9c1.4492 0 3.6.9 3.6.9s1.2508-.9 2.7-.9c1.4492 0 2.7.9 2.7.9 0-4.9706-4.0294-9-9-9Z"
-    />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -22,4 +20,6 @@ const Umbrella02 = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default Umbrella02;
+const ForwardRef = forwardRef(Umbrella02);
+const Memo = memo(ForwardRef);
+export default Memo;

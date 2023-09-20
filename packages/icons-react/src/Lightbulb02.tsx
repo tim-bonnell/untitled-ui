@@ -1,18 +1,16 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const Lightbulb02 = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const Lightbulb02 = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="M12 16.4c2.9823 0 5.4-2.4177 5.4-5.4 0-2.9823-2.4177-5.4-5.4-5.4-2.9823 0-5.4 2.4177-5.4 5.4 0 2.9823 2.4177 5.4 5.4 5.4Z"
-    />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -22,4 +20,6 @@ const Lightbulb02 = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default Lightbulb02;
+const ForwardRef = forwardRef(Lightbulb02);
+const Memo = memo(ForwardRef);
+export default Memo;

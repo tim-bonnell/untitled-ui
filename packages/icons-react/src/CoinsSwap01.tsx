@@ -1,18 +1,16 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const CoinsSwap01 = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const CoinsSwap01 = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="m6.6 5.6 1.8-1.8L6.6 2m10.8 14.4-1.8 1.8 1.8 1.8m-9 0c2.9823 0 5.4-2.4177 5.4-5.4 0-2.9823-2.4177-5.4-5.4-5.4-2.9823 0-5.4 2.4177-5.4 5.4C3 17.5823 5.4177 20 8.4 20Z"
-    />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -22,4 +20,6 @@ const CoinsSwap01 = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default CoinsSwap01;
+const ForwardRef = forwardRef(CoinsSwap01);
+const Memo = memo(ForwardRef);
+export default Memo;

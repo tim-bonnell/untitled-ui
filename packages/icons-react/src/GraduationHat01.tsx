@@ -1,18 +1,16 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const GraduationHat01 = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const GraduationHat01 = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="M12.322 3.667c-.1181-.059-.1771-.0886-.239-.1002a.4502.4502 0 0 0-.166 0c-.0619.0116-.1209.0411-.239.1002L3 8.006l8.678 4.339c.1181.059.1771.0885.239.1001a.4498.4498 0 0 0 .166 0c.0619-.0116.1209-.0411.239-.1001L21 8.006l-8.678-4.339Z"
-    />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -22,4 +20,6 @@ const GraduationHat01 = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default GraduationHat01;
+const ForwardRef = forwardRef(GraduationHat01);
+const Memo = memo(ForwardRef);
+export default Memo;

@@ -1,18 +1,16 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const Recording02 = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const Recording02 = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="M3 10v4-4Zm4.5 1v2-2ZM12 6v12V6Zm4.5-3v18V3Zm4.5 7v4-4Z"
-    />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -22,4 +20,6 @@ const Recording02 = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default Recording02;
+const ForwardRef = forwardRef(Recording02);
+const Memo = memo(ForwardRef);
+export default Memo;

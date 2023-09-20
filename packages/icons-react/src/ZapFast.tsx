@@ -1,18 +1,13 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const ZapFast = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const ZapFast = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="m17 3-6.5964 9.235c-.292.4088-.438.6131-.4317.7835a.5.5 0 0 0 .1942.3773c.135.1042.3861.1042.8885.1042H16L15 21l6.5964-9.235c.292-.4088.438-.6131.4317-.7835a.5.5 0 0 0-.1942-.3773c-.135-.1042-.3861-.1042-.8885-.1042H16L17 3Z"
-    />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -22,4 +17,6 @@ const ZapFast = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default ZapFast;
+const ForwardRef = forwardRef(ZapFast);
+const Memo = memo(ForwardRef);
+export default Memo;

@@ -1,18 +1,16 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const BarChartCircle01 = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const BarChartCircle01 = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="M12 20c4.9706 0 9-4.0294 9-9s-4.0294-9-9-9-9 4.0294-9 9 4.0294 9 9 9Zm-3.6-8.1v3.6-3.6Zm7.2-1.8v5.4-5.4ZM12 6.5v9-9Z"
-    />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -22,4 +20,6 @@ const BarChartCircle01 = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default BarChartCircle01;
+const ForwardRef = forwardRef(BarChartCircle01);
+const Memo = memo(ForwardRef);
+export default Memo;

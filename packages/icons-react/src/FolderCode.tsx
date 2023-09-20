@@ -1,23 +1,16 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const FolderCode = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const FolderCode = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="M3 6.6h13.68c1.5121 0 2.2682 0 2.8458.2943.508.2588.9211.6719 1.1799 1.18C21 8.6517 21 9.4078 21 10.92v3.96c0 1.5121 0 2.2682-.2943 2.8458a2.6996 2.6996 0 0 1-1.1799 1.1799c-.5776.2943-1.3337.2943-2.8458.2943H7.32c-1.5121 0-2.2682 0-2.8458-.2943a2.6998 2.6998 0 0 1-1.18-1.1799C3 17.1482 3 16.3921 3 14.88V6.6Z"
-    />
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="m13.8 15.15 2.25-2.25-2.25-2.25m-3.6 0L7.95 12.9l2.25 2.25"
-    />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -27,4 +20,6 @@ const FolderCode = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default FolderCode;
+const ForwardRef = forwardRef(FolderCode);
+const Memo = memo(ForwardRef);
+export default Memo;

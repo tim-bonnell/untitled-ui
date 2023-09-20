@@ -1,23 +1,16 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const Database02 = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const Database02 = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="M11.1 8.4c4.4735 0 8.1-1.2088 8.1-2.7S15.5735 3 11.1 3 3 4.2088 3 5.7s3.6265 2.7 8.1 2.7Zm8.1 1.5482c0 1.494-3.6 2.7-8.1 2.7s-8.1-1.206-8.1-2.7m16.2 4.2478c0 1.494-3.6 2.7-8.1 2.7S3 15.69 3 14.196"
-    />
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="M3 5.7v12.6c0 1.494 3.6 2.7 8.1 2.7s8.1-1.206 8.1-2.7V5.7"
-    />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -27,4 +20,6 @@ const Database02 = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default Database02;
+const ForwardRef = forwardRef(Database02);
+const Memo = memo(ForwardRef);
+export default Memo;

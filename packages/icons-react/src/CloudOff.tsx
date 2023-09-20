@@ -1,18 +1,13 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const CloudOff = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const CloudOff = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="M7.05 17.4C4.8133 17.4 3 15.5868 3 13.35c0-2.1092 1.6124-3.8418 3.6718-4.0326A5.3754 5.3754 0 0 1 7.758 6.8581l10.3684 10.3684A4.0513 4.0513 0 0 1 16.95 17.4h-9.9Z"
-    />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -22,4 +17,6 @@ const CloudOff = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default CloudOff;
+const ForwardRef = forwardRef(CloudOff);
+const Memo = memo(ForwardRef);
+export default Memo;

@@ -1,18 +1,16 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const CurrencyRupee = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const CurrencyRupee = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="M6 3h12H6Zm0 5h12H6Zm0 5 8.5 8L6 13Zm0 0h3-3Zm3 0c6.667 0 6.667-10 0-10v10Z"
-    />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -22,4 +20,6 @@ const CurrencyRupee = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default CurrencyRupee;
+const ForwardRef = forwardRef(CurrencyRupee);
+const Memo = memo(ForwardRef);
+export default Memo;

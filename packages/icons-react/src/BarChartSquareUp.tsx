@@ -1,14 +1,16 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const BarChartSquareUp = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const BarChartSquareUp = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path fill="#fff" fillOpacity={0.01} d="M8 13v4-4Zm8-2v6-6Zm-4-4v10V7Z" />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -18,4 +20,6 @@ const BarChartSquareUp = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default BarChartSquareUp;
+const ForwardRef = forwardRef(BarChartSquareUp);
+const Memo = memo(ForwardRef);
+export default Memo;

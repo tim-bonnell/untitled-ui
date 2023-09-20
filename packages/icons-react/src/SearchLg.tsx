@@ -1,18 +1,13 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const SearchLg = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const SearchLg = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="M11.5 20c4.6944 0 8.5-3.8056 8.5-8.5S16.1944 3 11.5 3 3 6.8056 3 11.5 6.8056 20 11.5 20Z"
-    />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -22,4 +17,6 @@ const SearchLg = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default SearchLg;
+const ForwardRef = forwardRef(SearchLg);
+const Memo = memo(ForwardRef);
+export default Memo;

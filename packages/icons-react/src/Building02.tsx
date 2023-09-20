@@ -1,18 +1,16 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const Building02 = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const Building02 = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="M3 6.2c0-1.1201 0-1.6802.218-2.108a1.9999 1.9999 0 0 1 .874-.874C4.5198 3 5.08 3 6.2 3h11.6c1.1201 0 1.6802 0 2.108.218.3763.1917.6823.4977.874.874C21 4.5198 21 5.08 21 6.2v11.6c0 1.1201 0 1.6802-.218 2.108a1.9996 1.9996 0 0 1-.874.874C19.4802 21 18.9201 21 17.8 21H6.2c-1.1201 0-1.6802 0-2.108-.218a1.9997 1.9997 0 0 1-.874-.874C3 19.4802 3 18.9201 3 17.8V6.2Z"
-    />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -22,4 +20,6 @@ const Building02 = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default Building02;
+const ForwardRef = forwardRef(Building02);
+const Memo = memo(ForwardRef);
+export default Memo;

@@ -1,14 +1,13 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const Sunset = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const Sunset = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path fill="#fff" fillOpacity={0.01} d="M15.6 4.7 12 8.3 8.4 4.7" />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -18,4 +17,6 @@ const Sunset = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default Sunset;
+const ForwardRef = forwardRef(Sunset);
+const Memo = memo(ForwardRef);
+export default Memo;

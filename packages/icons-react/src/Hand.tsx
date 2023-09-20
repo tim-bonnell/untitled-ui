@@ -1,18 +1,13 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const Hand = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const Hand = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="M11.15 21c4.225 0 7.65-3.3579 7.65-7.5v-5c0-.8284-.685-1.5-1.53-1.5s-1.53.6716-1.53 1.5v-3c0-.8284-.685-1.5-1.53-1.5s-1.53.6716-1.53 1.5v-1c0-.8284-.685-1.5-1.53-1.5s-1.53.6716-1.53 1.5v1c0-.8284-.685-1.5-1.53-1.5s-1.53.6716-1.53 1.5v6c0-.8284-.685-1.5-1.53-1.5s-1.53.6716-1.53 1.5v2c0 4.1421 3.425 7.5 7.65 7.5Z"
-    />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -22,4 +17,6 @@ const Hand = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default Hand;
+const ForwardRef = forwardRef(Hand);
+const Memo = memo(ForwardRef);
+export default Memo;

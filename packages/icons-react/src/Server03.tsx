@@ -1,18 +1,13 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const Server03 = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const Server03 = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="M3 16.05c0-1.7397 1.4103-3.15 3.15-3.15h11.7c1.7397 0 3.15 1.4103 3.15 3.15 0 1.7397-1.4103 3.15-3.15 3.15H6.15C4.4103 19.2 3 17.7897 3 16.05Z"
-    />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -22,4 +17,6 @@ const Server03 = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default Server03;
+const ForwardRef = forwardRef(Server03);
+const Memo = memo(ForwardRef);
+export default Memo;

@@ -1,18 +1,16 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const Cryptocurrency01 = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const Cryptocurrency01 = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="M12 17.4998c3.0376 0 5.5-2.4625 5.5-5.5 0-3.0376-2.4624-5.5-5.5-5.5s-5.5 2.4624-5.5 5.5c0 3.0375 2.4624 5.5 5.5 5.5Z"
-    />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -22,4 +20,6 @@ const Cryptocurrency01 = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default Cryptocurrency01;
+const ForwardRef = forwardRef(Cryptocurrency01);
+const Memo = memo(ForwardRef);
+export default Memo;

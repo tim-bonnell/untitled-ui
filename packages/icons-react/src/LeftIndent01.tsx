@@ -1,18 +1,16 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const LeftIndent01 = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const LeftIndent01 = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="M3 15c0 .515 0 .7725.1063.9082a.5.5 0 0 0 .3833.1917c.1724.0036.3784-.1509.7904-.4599l3.8667-2.9c.2895-.2171.4342-.3257.486-.4588a.4998.4998 0 0 0 0-.3624c-.0518-.1331-.1965-.2417-.486-.4588L4.28 8.56c-.412-.309-.618-.4635-.7904-.4599a.5.5 0 0 0-.3833.1917C3 8.4275 3 8.685 3 9.2V15Z"
-    />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -22,4 +20,6 @@ const LeftIndent01 = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default LeftIndent01;
+const ForwardRef = forwardRef(LeftIndent01);
+const Memo = memo(ForwardRef);
+export default Memo;

@@ -1,14 +1,16 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const ArrowsLeft = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const ArrowsLeft = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path fill="#fff" fillOpacity={0.01} d="m8 21-4-4 4-4m5-2L9 7l4-4" />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -18,4 +20,6 @@ const ArrowsLeft = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default ArrowsLeft;
+const ForwardRef = forwardRef(ArrowsLeft);
+const Memo = memo(ForwardRef);
+export default Memo;

@@ -1,18 +1,13 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const Modem02 = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const Modem02 = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="M2 18.1999c0-1.1201 0-1.6801.218-2.108a2.0003 2.0003 0 0 1 .874-.874c.4278-.218.9879-.218 2.108-.218h13.6c1.1201 0 1.6801 0 2.108.218.3763.1918.6822.4977.874.874.218.4279.218.9879.218 2.108v.6c0 1.1201 0 1.6802-.218 2.108a2.0001 2.0001 0 0 1-.874.874c-.4279.218-.9879.218-2.108.218H5.2c-1.1201 0-1.6802 0-2.108-.218a1.9998 1.9998 0 0 1-.874-.874C2 20.4801 2 19.92 2 18.7999v-.6Z"
-    />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -22,4 +17,6 @@ const Modem02 = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default Modem02;
+const ForwardRef = forwardRef(Modem02);
+const Memo = memo(ForwardRef);
+export default Memo;

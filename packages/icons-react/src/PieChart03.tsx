@@ -1,23 +1,16 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const PieChart03 = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const PieChart03 = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="M12 2a9.0005 9.0005 0 0 1 6.364 2.636A9.0004 9.0004 0 0 1 21 11h-9V2Zm9 9a9 9 0 0 1-3.7099 7.2812L12 11h9Z"
-    />
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="M21 11c0 4.9706-4.0294 9-9 9s-9-4.0294-9-9 4.0294-9 9-9 9 4.0294 9 9Z"
-    />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -27,4 +20,6 @@ const PieChart03 = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default PieChart03;
+const ForwardRef = forwardRef(PieChart03);
+const Memo = memo(ForwardRef);
+export default Memo;

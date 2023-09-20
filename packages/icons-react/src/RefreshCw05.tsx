@@ -1,18 +1,16 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const RefreshCw05 = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const RefreshCw05 = (
+  props: SVGProps<SVGSVGElement>,
+  ref: Ref<SVGSVGElement>
+) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="m3.4932 18.0661.732-2.7321 2.732.7321M17.0424 7.934l2.732.732.7321-2.732"
-    />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -22,4 +20,6 @@ const RefreshCw05 = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default RefreshCw05;
+const ForwardRef = forwardRef(RefreshCw05);
+const Memo = memo(ForwardRef);
+export default Memo;

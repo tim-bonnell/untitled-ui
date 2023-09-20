@@ -1,18 +1,13 @@
 import * as React from 'react';
-import { SVGProps } from 'react';
-const Users03 = (props: SVGProps<SVGSVGElement>) => (
+import { SVGProps, Ref, forwardRef, memo } from 'react';
+const Users03 = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={24}
-    height={24}
     fill="none"
+    viewBox="0 0 24 24"
+    ref={ref}
     {...props}
   >
-    <path
-      fill="#fff"
-      fillOpacity={0.01}
-      d="M9.7446 12.1521c2.2512 0 4.0761-1.8249 4.0761-4.076C13.8207 5.8249 11.9958 4 9.7447 4 7.4934 4 5.6685 5.825 5.6685 8.076c0 2.2512 1.8249 4.0761 4.076 4.0761Zm0 2.7174c-2.564 0-4.8428 1.399-6.2869 3.5673-.3163.475-.4745.7125-.4563 1.0159.0142.2362.169.5254.3578.6682.2424.1833.5758.1833 1.2427.1833h10.2855c.6668 0 1.0002 0 1.2426-.1833.1888-.1428.3436-.432.3578-.6682.0182-.3034-.1399-.5409-.4563-1.0159-1.4441-2.1683-3.7229-3.5673-6.2869-3.5673Z"
-    />
     <path
       stroke="currentColor"
       strokeLinecap="round"
@@ -22,4 +17,6 @@ const Users03 = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default Users03;
+const ForwardRef = forwardRef(Users03);
+const Memo = memo(ForwardRef);
+export default Memo;
